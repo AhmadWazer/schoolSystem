@@ -6,9 +6,11 @@ use App\Models\User;
 use App\Models\Classes;
 use App\Models\Subject;
 use App\Models\DateSheet;
+use App\Models\Attendance;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
 use DB;
 
 use Illuminate\Support\Facades\Hash;
@@ -111,5 +113,18 @@ class TeacherController extends Controller
         // dd($value);
         $value->save();
         return redirect()->route('teacher.datesheet');
+    }
+    public function stdattend()
+    {
+        $data = Attendance::where('teacher_id',Auth::user()->id)->join('users','users.id','=','attendance.student_id')->get();
+        $value = $data->groupBy('student_id');
+        $value->all();
+        
+        return view('school.attendanceStudent')->with('value',$value);
+    }
+    public function datashow()
+    { 
+        $attendanceData = Attendance::select('*')->get();
+        return response()->json($attendanceData);
     }
 }

@@ -28,7 +28,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::middleware(['auth','role'])->group(function () {
+Route::middleware(['auth','role'])->group(function () { 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/studentattend/{id}', [HomeController::class, 'studentAtten'])->name('studentAtten');
 Route::post('/studentattend', [HomeController::class, 'save'])->name('save.stdatten');
@@ -53,6 +53,7 @@ Route::get('/student/update/{id}',[StudentController::class,'edit'])->name('stud
 Route::post('/student/update/{id}',[StudentController::class,'update'])->name('student.update');
 Route::get('/student/delete/{id}',[StudentController::class,'delete'])->name('student.delete');
 Route::get('/student/datesheet',[StudentController::class,'datesheet'])->name('student.datesheet');
+Route::get('/student/showAttend',[StudentController::class,'showattend']);
 
 Route::post('/classdetails', [StudentController::class, 'stdatten'])->name('stdatten');
 Route::post('/getClassDetails', [StudentController::class, 'classDetails'])->name('getClassDetails');
@@ -66,6 +67,9 @@ Route::post('/teacher/update/{id}',[TeacherController::class, 'update'])->name('
 Route::get('/teacher/delete/{id}',[TeacherController::class, 'delete'])->name('teacher.delete');
 Route::get('/teacher/datesheet',[TeacherController::class,'datesheet'])->name('teacher.datesheet');
 Route::post('/teacher/datesheet',[TeacherController::class,'saveDS']);
+Route::get('/teacher/stdattendance',[TeacherController::class,'stdattend']);
+
+Route::get('/teacher/attenddatashow',[TeacherController::class,'datashow']);
 //Parents
 Route::get('/parent',[ParentController::class,'parent'])->name('parent');
 Route::get('/parent/show/{id}',[ParentController::class,'show'])->name('parent.show');

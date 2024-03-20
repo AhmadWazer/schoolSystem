@@ -239,6 +239,12 @@
               </a>
             </li>
             <li class="menu-item ">
+              <a href="/student/showAttend" class="menu-link" style="text-decoration:none">
+                <i class="menu-icon tf-icons bx bx-check"></i>
+                <div data-i18n="Analytics">Attendance</div>
+              </a>
+            </li>
+            <li class="menu-item ">
               <a href="/student/datesheet" class="menu-link" style="text-decoration:none">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <div data-i18n="Analytics">Notification</div>
@@ -259,6 +265,13 @@
               <a href="{{url('/teacher/datesheet')}}" class="menu-link" style="text-decoration:none">
                 <i class=""></i>
                 <div data-i18n="Analytics">DateSheet</div>
+              </a>
+            </li>
+            <!-- show attendance -->
+            <li class="menu-item ">
+              <a href="{{url('/teacher/stdattendance')}}" class="menu-link" style="text-decoration:none">
+                <i class=""></i>
+                <div data-i18n="Analytics">Attendance</div>
               </a>
             </li>
             @endif

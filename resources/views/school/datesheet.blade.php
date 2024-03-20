@@ -41,24 +41,25 @@
                     </div>
                 </div>
                 <div class="m-4 col-12 d-flex">
-                    <div class="col-5 ms-2">
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text bg-info">date</span>
-                            <input class="form-control" type="date" name="date" id="">
-                        </div>
-                    </div>
+                    <!--  -->
                     <div class="col-5 ms-2">
                         <div class="input-group flex-nowrap">
                             <span class="input-group-text bg-info">start-time</span>
                             <input class="form-control" type="datetime-local" name="stime" id="">
                         </div>
                     </div>
-                </div>
-                <div class="m-4 col-12 d-flex">
                     <div class="col-5 ms-2">
                         <div class="input-group flex-nowrap">
                             <span class="input-group-text bg-info">end-time</span>
                             <input class="form-control" type="datetime-local" name="etime" id="">
+                        </div>
+                    </div>
+                </div>
+                <div class="m-4 col-12 d-flex">
+                <div class="col-5 ms-2">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text bg-info">date</span>
+                            <input class="form-control" type="date" name="date" id="">
                         </div>
                     </div>
                 </div>

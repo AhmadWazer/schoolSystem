@@ -51,7 +51,7 @@ class ParentController extends Controller
         $pdata->phone = $request->phone;
         $pdata->gender = $request->btnradio;
         $pdata->current_address = $request->caddress;
-        $pdata->permanent_address = $request->paddress;
+        $pdata->permenent_address = $request->paddress;
         $pdata->image = $request->picture;
        
         $pdata->save();

@@ -58,7 +58,7 @@ class StudentController extends Controller
         $std->gender = $request->btnradio;
         $std->dob = $request->dob;
         $std->current_address = $request->currentadd;
-        $std->permanent_address = $request->paddress;
+        $std->permenent_address = $request->paddress;
         $std->assign_class = $request->assign_class;
         $std->student_parent = $request->student_parent;
         $std->image = $request->picture;
@@ -108,5 +108,9 @@ class StudentController extends Controller
         $ldate = new DateTime('now');
         // dd($dsheet);
         return view('school.shownotification')->with('dsheet',$dsheet)->with('ldate',$ldate);
+    }
+    public function showattend()
+    {
+        return view('Attendance.studentAttendShow');
     }
 }
